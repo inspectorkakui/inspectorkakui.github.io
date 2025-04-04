@@ -1,6 +1,6 @@
 # Torch AI
 
-This repository contains the source code for my Torch AI website, showcasing my services and portfolio as a freelance prompt engineer.
+This repository contains the source code for my Torch AI website, showcasing specialized prompt engineering services for small businesses and entrepreneurs.
 
 ## About
 
@@ -8,19 +8,19 @@ I help small businesses, solopreneurs, and individual entrepreneurs harness the 
 
 ## Services
 
-- **Prompt Template Kits** ($50-$100): Ready-to-use prompt collections for common business tasks
-- **Custom Prompt Development** ($150-$300): Tailored prompt solutions for specific business challenges
-- **AI Workflow Optimization** ($200-$300): Streamline business processes with AI-powered workflows
+- **Small Business AI Assistant Kit** ($50-$100): Ready-to-use prompt collections for everyday business tasks
+- **Content Creator's Prompt Toolkit** ($150-$250): Specialized prompt collection for engaging content creation
+- **Customer Service Response Framework** ($200-$300): Comprehensive system for consistent, personalized customer communications
 
 ## Portfolio Highlights
 
-- **Content Creator's Toolkit**: Comprehensive prompts for blogs, social media, and marketing
-- **Customer Service Response Framework**: System for consistent, efficient customer communications
-- **Solo Entrepreneur Productivity System**: Prompts for planning, organization, and project management
+- **Bakery Marketing Transformation**: Helped a small bakery increase content output by 320% while saving 9.5 hours weekly
+- **Customer Service Response Framework**: System that reduced response time by 75% for an e-commerce business
+- **Solo Entrepreneur Productivity System**: Prompt collection that helped a consultant save 10+ hours weekly on administrative tasks
 
 ## Contact
 
-For inquiries, please email: prompt-solutions@example.com
+For inquiries, please email: torchpromptsai@proton.me
 
 ## Website
 
