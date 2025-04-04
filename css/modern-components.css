@@ -1,18 +1,23 @@
 /* Torch AI - Modern UI Components */
 
-/* Enhanced Card Layouts */
+/* Updated Card Layouts with Glassmorphism */
 .modern-card {
-  background: white;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 
+              0 1px 1px rgba(0, 0, 0, 0.01),
+              inset 0 1px 0 rgba(255, 255, 255, 0.7);
   transition: all var(--transition-medium);
   position: relative;
   z-index: 1;
-  padding: 2rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .modern-card::before {
@@ -28,32 +33,49 @@
 
 .modern-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--hover-shadow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 
+              0 1px 2px rgba(0, 0, 0, 0.02),
+              inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .modern-card-header {
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 .modern-card-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(67, 97, 238, 0.1);
+  background: rgba(67, 97, 238, 0.08);
   color: var(--primary);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-card-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
 }
 
 .modern-card-title {
   margin: 0;
   color: var(--dark);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .modern-card-content {
@@ -67,27 +89,31 @@
   align-items: center;
 }
 
-/* Feature Cards */
+/* Enhanced Feature Cards */
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin: 3.5rem 0;
 }
 
 .feature-card {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: var(--card-shadow);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.7);
   transition: all var(--transition-medium);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--hover-shadow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .feature-card::after {
@@ -96,7 +122,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 4px;
   background: var(--accent-gradient);
   transform: scaleX(0);
   transform-origin: center;
@@ -108,27 +134,45 @@
 }
 
 .feature-icon {
-  margin-bottom: 1.5rem;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: rgba(67, 97, 238, 0.1);
+  margin-bottom: 1.75rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background: rgba(67, 97, 238, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
 }
 
 .feature-title {
   margin-top: 0;
   margin-bottom: 1rem;
   color: var(--dark);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .feature-description {
   color: #6c757d;
   margin-bottom: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 /* Modern Testimonial Card */
@@ -209,29 +253,33 @@
   margin-top: 0.5rem;
 }
 
-/* Enhanced Buttons */
+/* Modern 2025 Button Styles */
 .btn-modern {
-  position: relative;
-  padding: 0.8rem 1.8rem;
-  background: var(--primary-gradient);
-  color: white;
-  border: none;
-  border-radius: 50px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all var(--transition-medium);
-  overflow: hidden;
-  z-index: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.3);
+  background: var(--primary-gradient);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.25);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  min-width: 160px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .btn-modern:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(67, 97, 238, 0.35);
 }
 
 .btn-modern::before {
@@ -241,9 +289,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
   transform: translateX(-100%);
-  transition: all 0.8s ease;
+  transition: transform 1s ease;
   z-index: -1;
 }
 
@@ -252,11 +300,38 @@
 }
 
 .btn-icon-right {
-  margin-left: 0.5rem;
+  margin-left: 0.75rem;
 }
 
 .btn-icon-left {
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
+}
+
+/* 3D Button Effect */
+.btn-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.btn-3d::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-dark);
+  border-radius: inherit;
+  transform: translateZ(-10px);
+  filter: blur(10px);
+  opacity: 0.5;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-3d:hover::after {
+  transform: translateZ(-15px) translateY(5px);
+  filter: blur(15px);
+  opacity: 0.4;
 }
 
 /* Modern pricing table */

@@ -59,7 +59,11 @@
     <link rel="stylesheet" href="css/loader.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/modern-components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/modern-2025.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/services.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/footer.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/optimizations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'">
     
     <!-- Non-critical CSS loaded asynchronously -->
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -73,7 +77,11 @@
         <link rel="stylesheet" href="css/loader.css">
         <link rel="stylesheet" href="css/animations.css">
         <link rel="stylesheet" href="css/modern-components.css">
+        <link rel="stylesheet" href="css/modern-2025.css">
+        <link rel="stylesheet" href="css/services.css">
+        <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/optimizations.css">
+        <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
     
@@ -115,283 +123,190 @@
             </div>
         </div>
     </div>
-    <!-- Header Section -->
+    <!-- Modern Header Section -->
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
+                <a href="index.html" class="logo" style="text-decoration: none;">
                     <img src="images/logo-enhanced.svg" alt="Torch AI Prompt Engineering Services Logo" style="height: 45px;">
+                    <span style="margin-left: 10px; font-weight: 800; color: var(--dark);">Torch AI</span>
                 </a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <div class="nav-links">
-                    <a href="index.html" class="animated-underline">Home</a>
+                    <a href="index.html" class="animated-underline active">Home</a>
                     <a href="services-and-pricing.html" class="animated-underline">Services</a>
                     <a href="case-study.html" class="animated-underline">Case Study</a>
                     <a href="#contact" class="animated-underline">Contact</a>
+                    <a href="#" class="btn btn-modern btn-sm">Get Started</a>
                 </div>
             </nav>
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero" style="background-image: url('images/hero-pattern.svg'); background-size: cover; background-position: center;">
+    <!-- Redesigned Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content animate-fadeInLeft">
-                    <h1>Transform Your Business with <span>AI-Powered</span> Prompts</h1>
+                    <h1>Transform Your Business with <span class="gradient-text">AI-Powered</span> Prompts</h1>
                     <p class="hero-subtitle">Unlock the full potential of AI tools with expertly crafted prompts designed specifically for small businesses and entrepreneurs.</p>
                     <div class="hero-cta">
-                        <a href="#services" class="btn animate-glow">Explore Our Services</a>
-                        <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+                        <a href="#services" class="btn btn-modern animate-glow">Explore Our Services</a>
+                        <a href="#how-it-works" class="btn btn-modern btn-outline">How It Works</a>
                     </div>
                     <div class="hero-features">
-                        <div class="hero-feature delay-100 animate-fadeInUp">
-                            <i class="fas fa-bolt"></i>
-                            <span>Save 10+ hours weekly</span>
+                        <div class="hero-feature-item glass-card-dark delay-100 animate-fadeInUp">
+                            <div class="hero-feature-icon glow-effect">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="hero-feature-text">
+                                <h4>Save 10+ hours weekly</h4>
+                                <p>Automate repetitive tasks with AI</p>
+                            </div>
                         </div>
-                        <div class="hero-feature delay-200 animate-fadeInUp">
-                            <i class="fas fa-check-circle"></i>
-                            <span>No technical skills needed</span>
+                        <div class="hero-feature-item glass-card-dark delay-200 animate-fadeInUp">
+                            <div class="hero-feature-icon glow-effect">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="hero-feature-text">
+                                <h4>No technical skills needed</h4>
+                                <p>Our prompts work right out of the box</p>
+                            </div>
                         </div>
-                        <div class="hero-feature delay-300 animate-fadeInUp">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>Instant implementation</span>
+                        <div class="hero-feature-item glass-card-dark delay-300 animate-fadeInUp">
+                            <div class="hero-feature-icon glow-effect">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="hero-feature-text">
+                                <h4>Instant implementation</h4>
+                                <p>Start seeing results immediately</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="hero-image animate-fadeInRight">
-                    <img src="images/hero-graphic.svg" width="500" height="400" alt="AI Prompt Engineering Illustration showing network of connected nodes" class="animate-float" fetchpriority="high" loading="eager">
+                    <div class="hero-illustration hover-3d pulse-slow">
+                        <img src="images/hero-graphic.svg" width="500" height="400" alt="AI Prompt Engineering Illustration showing network of connected nodes" class="animate-float" fetchpriority="high" loading="eager">
+                        <div class="hero-dots"></div>
+                        <div class="hero-glow"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="hero-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
     </section>
     
-    <!-- About Section -->
-    <section class="about reveal-on-scroll" id="about" style="background-image: url('images/light-pattern.svg'); background-size: cover; background-position: center;">
+    <!-- Modern About Section -->
+    <section class="about reveal-on-scroll" id="about">
         <div class="container">
             <div class="section-intro">
-                <h2>About Our Services</h2>
-                <p>We help small businesses harness the power of AI through strategic prompt engineering.</p>
+                <span class="section-tag">About Us</span>
+                <h2>Harness the Power of <span class="highlight">AI Technology</span></h2>
+                <p>We help small businesses leverage AI through strategic prompt engineering.</p>
+                <div class="section-divider"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>Welcome to Torch AI, where we help small businesses and entrepreneurs harness the power of AI technology through carefully crafted prompts.</p>
                     <p>As AI tools become more accessible, the key to unlocking their potential lies in how you communicate with them. That's where our prompt engineering expertise comes in.</p>
                     <p>We provide practical, accessible solutions that enable you to achieve better results from AI tools without requiring technical knowledge or significant investment.</p>
+                    <div class="about-stats">
+                        <div class="stat-item glass-card">
+                            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                            <div class="stat-value gradient-text">85%</div>
+                            <div class="stat-label">Time Saved</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat-value gradient-text">320%</div>
+                            <div class="stat-label">Output Increase</div>
+                        </div>
+                        <div class="stat-item glass-card">
+                            <div class="stat-icon"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat-value gradient-text">14x</div>
+                            <div class="stat-label">ROI Average</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-img">
-                    <img src="https://via.placeholder.com/500x300?text=AI+Solutions" alt="AI Solutions for Small Businesses" class="hover-lift">
+                    <img src="images/hero-graphic.svg" alt="AI Solutions for Small Businesses" class="enhanced-image hover-3d pulse-slow">
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Services Section -->
+    <!-- Modern Services Section -->
     <section class="services reveal-on-scroll" id="services">
         <div class="container">
             <div class="section-intro">
-                <h2>Our Services</h2>
+                <span class="section-tag">Services</span>
+                <h2>Our <span class="highlight">AI Prompt</span> Solutions</h2>
                 <p>Practical prompt engineering solutions tailored for small businesses and entrepreneurs.</p>
             </div>
 
-            <div class="service-tabs">
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="tab1">Small Business Kit</button>
-                    <button class="tab-btn" data-tab="tab2">Content Creator's Toolkit</button>
-                    <button class="tab-btn" data-tab="tab3">Customer Service Framework</button>
-                </div>
-            </div>
-
-            <div class="services-container">
-                <!-- Tab 1 Content -->
-                <div class="service-tab-content active" id="tab1">
-                    <div class="service-showcase">
-                        <div class="service-info">
-                            <div class="service-header">
-                                <div class="service-icon-large">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <div>
-                                    <h3>Small Business AI Assistant Kit</h3>
-                                    <div class="price-tag">$50-$100</div>
-                                </div>
-                            </div>
-                            
-                            <p class="service-description">Ready-to-use prompt collections for everyday business tasks. Save time and improve consistency across all your operations with AI-powered solutions designed specifically for small businesses.</p>
-                            
-                            <div class="service-benefits">
-                                <div class="benefit-item">
-                                    <i class="fas fa-clock"></i>
-                                    <div>
-                                        <h4>Save Time</h4>
-                                        <p>Reduce task completion time by up to 75%</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-sync-alt"></i>
-                                    <div>
-                                        <h4>Instant Results</h4>
-                                        <p>Start using immediately with no learning curve</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-chart-line"></i>
-                                    <div>
-                                        <h4>Proven ROI</h4>
-                                        <p>Typical return on investment within 2 weeks</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h4 class="features-heading">What's Included:</h4>
-                            <ul class="features-list enhanced">
-                                <li>Marketing & content creation templates</li>
-                                <li>Customer service response frameworks</li>
-                                <li>Business operations optimization prompts</li>
-                                <li>Social media management system</li>
-                                <li>15-day email support for implementation</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="services-and-pricing.html" class="btn">View Full Details</a>
-                                <a href="#contact" class="btn btn-outline">Request Sample</a>
-                            </div>
+            <div class="services-grid">
+                <div class="service-card modern-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="service-image">
-                            <img src="images/small-business-kit.svg" alt="Small Business AI Assistant Kit showing templates and prompt frameworks" class="hover-lift">
-                            <div class="service-testimonial">
-                                <p>"The AI Assistant Kit gave me back 10+ hours every week. It's like having an extra team member."</p>
-                                <div class="mini-author">- Michael C., Solopreneur</div>
-                            </div>
-                        </div>
+                        <div class="service-badge">Most Popular</div>
                     </div>
+                    <h3 class="service-title">Small Business AI Assistant Kit</h3>
+                    <p class="service-price">$50-$100</p>
+                    <p class="service-description">A comprehensive collection of ready-to-use prompts for everyday business tasks, helping you automate and streamline your operations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 25+ custom prompt templates</li>
+                        <li><i class="fas fa-check"></i> Works with any AI assistant</li>
+                        <li><i class="fas fa-check"></i> Email writing & responses</li>
+                        <li><i class="fas fa-check"></i> Content summarization</li>
+                        <li><i class="fas fa-check"></i> Customer service responses</li>
+                    </ul>
+                    <a href="services-and-pricing.html#small-business" class="btn btn-modern">Learn More <i class="fas fa-arrow-right btn-icon-right"></i></a>
                 </div>
                 
-                <!-- Tab 2 Content -->
-                <div class="service-tab-content" id="tab2">
-                    <div class="service-showcase">
-                        <div class="service-info">
-                            <div class="service-header">
-                                <div class="service-icon-large">
-                                    <i class="fas fa-pen-fancy"></i>
-                                </div>
-                                <div>
-                                    <h3>Content Creator's Prompt Toolkit</h3>
-                                    <div class="price-tag">$150-$250</div>
-                                </div>
-                            </div>
-                            
-                            <p class="service-description">Specialized prompt collection for engaging content creation. Triple your content output while maintaining brand voice and improving engagement across all your marketing channels.</p>
-                            
-                            <div class="service-benefits">
-                                <div class="benefit-item">
-                                    <i class="fas fa-file-alt"></i>
-                                    <div>
-                                        <h4>More Content</h4>
-                                        <p>Create 3x more content in half the time</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-thumbs-up"></i>
-                                    <div>
-                                        <h4>Better Engagement</h4>
-                                        <p>Improve audience interaction by 50%+</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-bullhorn"></i>
-                                    <div>
-                                        <h4>Consistent Voice</h4>
-                                        <p>Maintain brand identity across all channels</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h4 class="features-heading">What's Included:</h4>
-                            <ul class="features-list enhanced">
-                                <li>Blog and article frameworks with SEO optimization</li>
-                                <li>Social media content templates for all platforms</li>
-                                <li>Email marketing sequence generators</li>
-                                <li>Content repurposing system</li>
-                                <li>21-day email support and implementation guidance</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="services-and-pricing.html" class="btn">View Full Details</a>
-                                <a href="#contact" class="btn btn-outline">Request Sample</a>
-                            </div>
-                        </div>
-                        <div class="service-image">
-                            <img src="images/content-creator-toolkit.svg" alt="Content Creator's Prompt Toolkit Illustration">
-                            <div class="service-testimonial">
-                                <p>"We've tripled our blog output and doubled our social engagement since implementing this toolkit."</p>
-                                <div class="mini-author">- Sarah J., Marketing Director</div>
-                            </div>
+                <div class="service-card modern-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
                         </div>
                     </div>
+                    <h3 class="service-title">Content Creator's Prompt Toolkit</h3>
+                    <p class="service-price">$150-$250</p>
+                    <p class="service-description">Specialized prompts designed for content creators who need to produce engaging, consistent content at scale.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 35+ content creation prompts</li>
+                        <li><i class="fas fa-check"></i> Blog post frameworks</li>
+                        <li><i class="fas fa-check"></i> Social media content</li>
+                        <li><i class="fas fa-check"></i> SEO optimization</li>
+                        <li><i class="fas fa-check"></i> Content repurposing</li>
+                    </ul>
+                    <a href="services-and-pricing.html#content-creators" class="btn btn-modern">Learn More <i class="fas fa-arrow-right btn-icon-right"></i></a>
                 </div>
                 
-                <!-- Tab 3 Content -->
-                <div class="service-tab-content" id="tab3">
-                    <div class="service-showcase">
-                        <div class="service-info">
-                            <div class="service-header">
-                                <div class="service-icon-large">
-                                    <i class="fas fa-comments"></i>
-                                </div>
-                                <div>
-                                    <h3>Customer Service Response Framework</h3>
-                                    <div class="price-tag">$200-$300</div>
-                                </div>
-                            </div>
-                            
-                            <p class="service-description">Comprehensive system for consistent, personalized customer communications. Reduce response time while improving satisfaction and maintaining your unique brand voice.</p>
-                            
-                            <div class="service-benefits">
-                                <div class="benefit-item">
-                                    <i class="fas fa-heartbeat"></i>
-                                    <div>
-                                        <h4>Faster Response</h4>
-                                        <p>Cut response time by up to 80%</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-smile"></i>
-                                    <div>
-                                        <h4>Higher Satisfaction</h4>
-                                        <p>Improve customer satisfaction scores</p>
-                                    </div>
-                                </div>
-                                <div class="benefit-item">
-                                    <i class="fas fa-users"></i>
-                                    <div>
-                                        <h4>Team Consistency</h4>
-                                        <p>Ensure all team members sound like your best</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h4 class="features-heading">What's Included:</h4>
-                            <ul class="features-list enhanced">
-                                <li>Response templates for common scenarios</li>
-                                <li>Tone adaptation framework for brand consistency</li>
-                                <li>Escalation handling prompts for difficult situations</li>
-                                <li>Social media response templates</li>
-                                <li>30-day email support and implementation assistance</li>
-                            </ul>
-                            
-                            <div class="service-cta">
-                                <a href="services-and-pricing.html" class="btn">View Full Details</a>
-                                <a href="#contact" class="btn btn-outline">Request Sample</a>
-                            </div>
-                        </div>
-                        <div class="service-image">
-                            <img src="images/customer-service-framework.svg" alt="Customer Service Response Framework Illustration">
-                            <div class="service-testimonial">
-                                <p>"Customer response time dropped from 24 hours to under 2 hours, and our satisfaction scores increased by 35%."</p>
-                                <div class="mini-author">- Alex T., Customer Experience Manager</div>
-                            </div>
+                <div class="service-card modern-card">
+                    <div class="service-card-header">
+                        <div class="service-icon">
+                            <i class="fas fa-comments"></i>
                         </div>
                     </div>
+                    <h3 class="service-title">Customer Service Response Framework</h3>
+                    <p class="service-price">$200-$300</p>
+                    <p class="service-description">A comprehensive system for consistent, personalized customer communications across all channels.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 30+ response templates</li>
+                        <li><i class="fas fa-check"></i> Complaint handling</li>
+                        <li><i class="fas fa-check"></i> Tone & voice consistency</li>
+                        <li><i class="fas fa-check"></i> Personalization framework</li>
+                        <li><i class="fas fa-check"></i> Multi-channel adaptation</li>
+                    </ul>
+                    <a href="services-and-pricing.html#customer-service" class="btn btn-modern">Learn More <i class="fas fa-arrow-right btn-icon-right"></i></a>
                 </div>
             </div>
         </div>
@@ -529,19 +444,29 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <div class="container">
             <div class="cta-content">
-                <div class="cta-decoration left"></div>
-                <div class="cta-decoration right"></div>
-                <h2>Ready to Transform Your Business with AI?</h2>
-                <p>Let's discuss how prompt engineering can solve your specific business challenges and save you valuable time.</p>
-                <div class="cta-actions">
-                    <a href="#contact" class="btn btn-light">Get Started Today</a>
-                    <div class="cta-guarantee">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>No technical skills required • Results from day one • Email support included</span>
-                    </div>
+                <h2 class="cta-title">Ready to Elevate Your Prompt Engineering Skills?</h2>
+                <p class="cta-description">Join thousands of AI professionals who are mastering the art of prompt engineering with our comprehensive training and resources.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started Today
+                    </a>
+                    <a href="#" class="cta-secondary">
+                        <i class="fas fa-calendar"></i>
+                        Schedule a Demo
+                    </a>
                 </div>
             </div>
         </div>
@@ -615,39 +540,94 @@
         <img src="images/footer-wave.svg" alt="Decorative wave pattern for footer" style="position: relative; display: block; width: 100%; height: 150px;">
     </div>
     
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo-section">
-                    <a href="index.html" class="footer-logo">
-                        <img src="images/logo-enhanced.svg" alt="Torch AI" style="height: 45px;">
-                    </a>
-                    <p>Transforming Business Potential with AI-Powered Prompts. We help small businesses and entrepreneurs harness the power of AI through carefully crafted prompts.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services-and-pricing.html">Services</a></li>
-                        <li><a href="case-study.html">Case Study</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><a href="services-and-pricing.html">Small Business AI Assistant Kit</a></li>
-                        <li><a href="services-and-pricing.html">Content Creator's Prompt Toolkit</a></li>
-                        <li><a href="services-and-pricing.html">Customer Service Response Framework</a></li>
-                    </ul>
+    <!-- Modern Footer with CTA -->
+    <footer class="footer">
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <div class="cta-text">
+                            <h2>Ready to transform your business with AI?</h2>
+                            <p>Get started with our custom prompt engineering solutions designed for small businesses.</p>
+                        </div>
+                        <div class="cta-actions">
+                            <a href="#contact" class="btn btn-modern btn-3d">Get Started</a>
+                            <a href="services-and-pricing.html" class="btn btn-modern btn-outline">View All Services</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Torch AI. All rights reserved.</p>
+        </div>
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="images/logo-enhanced.svg" alt="Torch AI Logo" style="height: 45px;">
+                            <span>Torch AI</span>
+                        </div>
+                        <p>Specialized prompt engineering services helping small businesses harness the power of AI.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><a href="services-and-pricing.html#small-business">Small Business Kit</a></li>
+                                <li><a href="services-and-pricing.html#content-creators">Content Creator's Toolkit</a></li>
+                                <li><a href="services-and-pricing.html#customer-service">Customer Service Framework</a></li>
+                                <li><a href="services-and-pricing.html#custom">Custom Solutions</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="case-study.html">Case Studies</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column" id="contact">
+                            <h4>Contact Us</h4>
+                            <ul class="contact-info">
+                                <li><i class="fas fa-envelope"></i> <a href="mailto:torchpromptsai@proton.me">torchpromptsai@proton.me</a></li>
+                                <li><i class="fas fa-clock"></i> Response time: 24-48 hours</li>
+                            </ul>
+                            <div class="contact-form">
+                                <form id="contactForm" action="#" method="POST">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Your email" required class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="message" placeholder="Your message" required class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-modern btn-sm">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="copyright">
+                        &copy; 2025 Torch AI. All rights reserved.
+                    </div>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -668,6 +648,69 @@
                 document.querySelector('.page-loader')?.classList.add('fade-out');
             }, 200);
         });
+
+        // Page loader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelector('.page-loader').classList.add('fade-out');
+                setTimeout(() => {
+                    document.querySelector('.page-loader').style.display = 'none';
+                }, 600);
+            }, 500);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const isOpen = navLinks.classList.contains('active');
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                
+                // Toggle icon
+                const icon = menuToggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        
+        function revealOnScroll() {
+            for (let i = 0; i < revealElements.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = revealElements[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    revealElements[i].classList.add('revealed');
+                }
+            }
+        }
+        
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Run once on page load
+        
+        // Header scroll effect
+        const header = document.querySelector('header');
+        
+        function scrollHeader() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+        
+        window.addEventListener('scroll', scrollHeader);
     </script>
 </body>
 </html>
