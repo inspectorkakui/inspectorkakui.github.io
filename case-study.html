@@ -3,41 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study: Local Bakery Content Transformation | Torch AI</title>
+    <title>Case Study | Torch AI</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <meta name="description" content="See how our prompt engineering services helped Sweet Creations Bakery increase online engagement by 200% and save 10 hours per week.">
-    <meta name="keywords" content="prompt engineering case study, AI case study, small business AI, prompt engineering results, bakery marketing AI">
+    <meta name="description" content="Learn how our Content Creator's Toolkit helped a local business triple their content output and increase engagement by over 50%.">
     <link rel="canonical" href="https://inspectorkakui.github.io/case-study.html">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Case Study: Local Bakery Content Transformation | Torch AI">
-    <meta property="og:description" content="See how our prompt engineering services helped Sweet Creations Bakery increase online engagement by 200% and save 10 hours per week.">
+    <meta property="og:title" content="Case Study | Torch AI">
+    <meta property="og:description" content="Learn how our Content Creator's Toolkit helped a local business triple their content output and increase engagement by over 50%.">
     <meta property="og:url" content="https://inspectorkakui.github.io/case-study.html">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Torch AI">
-    <meta property="og:image" content="https://inspectorkakui.github.io/images/torch-ai-logo.png">
     
-    <!-- Primary Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/additions.css">
-    <link rel="stylesheet" href="css/enhanced.css">
-    <link rel="stylesheet" href="css/refined.css">
-    <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/modern-components.css">
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/critical.css" as="style">
+    <link rel="preload" href="images/logo-enhanced.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/critical.css">
+    
+    <!-- Non-critical CSS loaded with media="print" onload trick for better performance -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/additions.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/enhanced.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/refined.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/loader.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/modern-components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/optimizations.css" media="print" onload="this.media='all'">
     
     <!-- Non-critical CSS loaded asynchronously -->
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Fallback for browsers without JavaScript -->
     <noscript>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/additions.css">
+        <link rel="stylesheet" href="css/enhanced.css">
+        <link rel="stylesheet" href="css/refined.css">
+        <link rel="stylesheet" href="css/loader.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/modern-components.css">
+        <link rel="stylesheet" href="css/optimizations.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
     
-    <!-- Inline critical CSS -->
+    <!-- Inline critical CSS for immediate rendering -->
     <style>
         .page-loader {
             position: fixed;
@@ -45,12 +58,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #f0f7ff;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.6s ease;
+            transition: opacity 0.4s ease;
         }
         .fade-out {
             opacity: 0;
@@ -326,7 +339,7 @@
                         <img src="https://via.placeholder.com/60x60" alt="Emily Rodriguez - Owner of Sweet Creations Bakery portrait">
                     </div>
                     <div class="testimonial-info-modern">
-                        <h4 class="testimonial-name">Emily Rodriguez</h4>
+                        <h3 class="testimonial-name">Emily Rodriguez</h3>
                         <p class="testimonial-role">Owner, Sweet Creations Bakery</p>
                         <div class="testimonial-rating">
                             <i class="fas fa-star"></i>
@@ -445,7 +458,23 @@
             <p><a href="index.html">Back to Home</a></p>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
+    
+    <!-- Optimized JavaScript Loading -->
+    <script src="js/main.js" defer></script>
+    <script src="js/meta.js" defer></script>
+    <script>
+        // Inline critical JavaScript for immediate execution
+        // Detect when fonts are loaded
+        document.fonts.ready.then(() => {
+            document.documentElement.classList.add('fonts-loaded');
+        });
+        
+        // Remove page loader after content is loaded
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelector('.page-loader')?.classList.add('fade-out');
+            }, 200);
+        });
+    </script>
 </body>
 </html>

@@ -24,11 +24,14 @@
     <meta name="twitter:image" content="https://inspectorkakui.github.io/images/torch-ai-logo.png">
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="css/critical.css" as="style">
     <link rel="preload" href="images/logo-enhanced.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="images/hero-graphic.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="images/hero-graphic.svg" as="image" type="image/svg+xml" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/critical.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -48,21 +51,29 @@
     }
     </script>
     
-    <!-- Primary Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/additions.css">
-    <link rel="stylesheet" href="css/enhanced.css">
-    <link rel="stylesheet" href="css/refined.css">
-    <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/modern-components.css">
+    <!-- Non-critical CSS loaded with media="print" onload trick for better performance -->
+    <link rel="stylesheet" href="css/main.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/additions.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/enhanced.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/refined.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/loader.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/modern-components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/optimizations.css" media="print" onload="this.media='all'">
     
     <!-- Non-critical CSS loaded asynchronously -->
     <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Fallback for browsers without JavaScript -->
     <noscript>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/additions.css">
+        <link rel="stylesheet" href="css/enhanced.css">
+        <link rel="stylesheet" href="css/refined.css">
+        <link rel="stylesheet" href="css/loader.css">
+        <link rel="stylesheet" href="css/animations.css">
+        <link rel="stylesheet" href="css/modern-components.css">
+        <link rel="stylesheet" href="css/optimizations.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
     
@@ -148,7 +159,7 @@
                     </div>
                 </div>
                 <div class="hero-image animate-fadeInRight">
-                    <img src="images/hero-graphic.svg" alt="AI Prompt Engineering Illustration showing network of connected nodes" class="animate-float">
+                    <img src="images/hero-graphic.svg" width="500" height="400" alt="AI Prompt Engineering Illustration showing network of connected nodes" class="animate-float" fetchpriority="high" loading="eager">
                 </div>
             </div>
         </div>
@@ -492,11 +503,12 @@
                             <i class="fas fa-user-circle"></i>
                         </div>
                         <div class="testimonial-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Marketing Director, StyleHub</p>
+                            <h3 class="testimonial-name">Sarah Johnson</h3>
+                            <p class="testimonial-position">Marketing Director, StyleHub</p>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <i class="fas fa-quote-left testimonial-quote"></i>
@@ -507,8 +519,8 @@
                             <i class="fas fa-user-circle"></i>
                         </div>
                         <div class="testimonial-info">
-                            <h4>Michael Chen</h4>
-                            <p>Founder, EcoBasics</p>
+                            <h3 class="testimonial-name">Michael Chen</h3>
+                            <p class="testimonial-position">Founder, EcoBasics</p>
                         </div>
                     </div>
                 </div>
@@ -606,11 +618,14 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">Torch AI</a>
-                    <p class="footer-desc">Transforming Business Potential with AI-Powered Prompts. We help small businesses and entrepreneurs harness the power of AI through carefully crafted prompts.</p>
+            <div class="footer-grid">
+                <div class="footer-logo-section">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo-enhanced.svg" alt="Torch AI" style="height: 45px;">
+                    </a>
+                    <p>Transforming Business Potential with AI-Powered Prompts. We help small businesses and entrepreneurs harness the power of AI through carefully crafted prompts.</p>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -620,6 +635,7 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
+                
                 <div class="footer-links">
                     <h4>Our Services</h4>
                     <ul>
@@ -629,22 +645,28 @@
                     </ul>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2025 Torch AI. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-    <script src="js/refined.js"></script>
+    
+    <!-- Optimized JavaScript Loading -->
+    <script src="js/main.js" defer></script>
+    <script src="js/meta.js" defer></script>
     <script>
-        // Page loader animation
+        // Inline critical JavaScript for immediate execution
+        // Detect when fonts are loaded
+        document.fonts.ready.then(() => {
+            document.documentElement.classList.add('fonts-loaded');
+        });
+        
+        // Remove page loader after content is loaded
         window.addEventListener('load', function() {
-            const loader = document.querySelector('.page-loader');
-            setTimeout(function() {
-                loader.classList.add('fade-out');
-            }, 500);
+            setTimeout(() => {
+                document.querySelector('.page-loader')?.classList.add('fade-out');
+            }, 200);
         });
     </script>
 </body>

@@ -1,18 +1,21 @@
 // Torch AI - Main JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-  // Page loader
+  // Page loader with faster fade-out
   window.addEventListener('load', function() {
     const pageLoader = document.querySelector('.page-loader');
     if (pageLoader) {
-      pageLoader.classList.add('fade-out');
       setTimeout(function() {
-        pageLoader.style.display = 'none';
-      }, 600);
+        pageLoader.classList.add('fade-out');
+        setTimeout(function() {
+          pageLoader.style.display = 'none';
+        }, 400); // Reduced time for better UX
+      }, 200); // Small delay to ensure content is ready
     }
   });
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  // Optimized smooth scrolling with IntersectionObserver
+  const scrollLinks = document.querySelectorAll('a[href^="#"]');
+  scrollLinks.forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
@@ -20,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
+        // Use smooth scroll with better performance
         window.scrollTo({
           top: targetElement.offsetTop - 80,
           behavior: 'smooth'
@@ -28,124 +32,112 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Header scroll effect
+  // Header scroll effect with performance optimization
   const header = document.querySelector('header');
+  let scrolled = false;
+  let ticking = false;
+  
   if (header) {
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
+      scrolled = window.scrollY > 50;
+      
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          if (scrolled) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          ticking = false;
+        });
+        
+        ticking = true;
       }
     });
   }
   
-  // Services Tabs with enhanced transitions
+  // Services Tabs with enhanced transitions and performance
   const tabButtons = document.querySelectorAll('.tab-btn');
   const tabContents = document.querySelectorAll('.service-tab-content');
   
   if (tabButtons.length && tabContents.length) {
     tabButtons.forEach(button => {
       button.addEventListener('click', function() {
-        // Remove active class from all buttons and tab contents
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        
-        // Add active class to the clicked button with a slight delay for visual effect
-        setTimeout(() => {
-          this.classList.add('active');
-        }, 50);
-        
-        // Show the corresponding tab content
+        // Optimize this by caching active elements
+        const currentActive = document.querySelector('.tab-btn.active');
+        const currentContent = document.querySelector('.service-tab-content.active');
         const tabId = this.getAttribute('data-tab');
-        const activeContent = document.getElementById(tabId);
-        if (activeContent) {
-          setTimeout(() => {
-            activeContent.classList.add('active');
-          }, 100);
-        }
+        const targetContent = document.getElementById(tabId);
+        
+        if (currentActive) currentActive.classList.remove('active');
+        if (currentContent) currentContent.classList.remove('active');
+        
+        // Use requestAnimationFrame for smoother UI updates
+        requestAnimationFrame(() => {
+          this.classList.add('active');
+          if (targetContent) {
+            targetContent.classList.add('active');
+          }
+        });
       });
     });
   }
   
-  // Scroll reveal animation
+  // Scroll reveal animation with IntersectionObserver for better performance
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
   
-  function checkScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
+  if (revealElements.length) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target); // Stop observing once revealed
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
     
     revealElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      
-      if (elementTop < triggerBottom) {
-        element.classList.add('revealed');
-      }
+      revealObserver.observe(element);
     });
   }
   
-  // Check for elements in view on load
-  window.addEventListener('load', checkScroll);
+  // Service showcase responsiveness with ResizeObserver
+  const serviceShowcases = document.querySelectorAll('.service-showcase');
   
-  // Check for elements in view on scroll (with debounce for performance)
-  let scrollTimeout;
-  window.addEventListener('scroll', function() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(checkScroll, 10);
-  });
-  
-  // Add responsive adjustments for service showcase
-  function adjustServiceShowcase() {
-    const serviceShowcases = document.querySelectorAll('.service-showcase');
-    if (window.innerWidth < 992) {
+  if (serviceShowcases.length) {
+    const updateLayout = () => {
       serviceShowcases.forEach(showcase => {
-        showcase.style.gridTemplateColumns = '1fr';
+        showcase.style.gridTemplateColumns = window.innerWidth < 992 ? '1fr' : '1.5fr 1fr';
       });
+    };
+    
+    // Run once on load
+    updateLayout();
+    
+    // Better than resize event
+    if ('ResizeObserver' in window) {
+      const resizeObserver = new ResizeObserver(updateLayout);
+      serviceShowcases.forEach(showcase => resizeObserver.observe(showcase));
     } else {
-      serviceShowcases.forEach(showcase => {
-        showcase.style.gridTemplateColumns = '1.5fr 1fr';
+      // Fallback for older browsers
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateLayout, 100);
       });
     }
   }
   
-  // Run on load and resize (with debounce for performance)
-  adjustServiceShowcase();
-  let resizeTimeout;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(adjustServiceShowcase, 100);
-  });
-  
-  // Add hover effects to cards
-  const cards = document.querySelectorAll('.process-card, .service-card, .testimonial-card');
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-      this.classList.add('hovered');
-    });
-    
-    card.addEventListener('mouseleave', function() {
-      this.classList.remove('hovered');
-    });
-  });
-  
-  // Add typing effect to hero headline on page load
-  const heroHeadline = document.querySelector('.hero h1 span');
-  if (heroHeadline) {
-    heroHeadline.classList.add('typing-effect');
-    
-    // Add glowing effect to the hero CTA button after typing is complete
-    setTimeout(() => {
-      const heroCta = document.querySelector('.hero-cta .btn');
-      if (heroCta) {
-        heroCta.classList.add('pulse-attention');
-      }
-    }, 2500);
-  }
-  
-  // Lazy load images for performance
+  // Optimize image loading
   if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-      img.src = img.dataset.src;
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    lazyImages.forEach(img => {
+      if (img.dataset.src) {
+        img.src = img.dataset.src;
+      }
     });
   } else {
     // Fallback for browsers that don't support lazy loading
@@ -154,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(script);
   }
   
-  // Fix any console errors for network resources
+  // Error handling for resources
   window.addEventListener('error', function(e) {
     if (e.target.tagName === 'IMG' || e.target.tagName === 'SCRIPT' || e.target.tagName === 'LINK') {
       e.preventDefault();
@@ -162,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, true);
   
-  // Add accessibility improvements
+  // Accessibility improvements
   const focusableElements = document.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
   focusableElements.forEach(el => {
     if (!el.getAttribute('aria-label') && !el.textContent.trim()) {

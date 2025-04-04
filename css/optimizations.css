@@ -1,0 +1,209 @@
+/* Torch AI - Performance & Visual Optimizations */
+
+/* Font display optimizations */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/outfit/v11/QGYvz_MVcBeNP4NjuGObqx1XmO1I4TC0O7K1.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Performance optimizations */
+.hero-image img {
+  content-visibility: auto;
+  will-change: transform;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enhanced button animations */
+.btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn:hover:after {
+  left: 100%;
+}
+
+/* Card hover effects */
+.card, .service-card, .testimonial-card, .process-card {
+  transition: all 0.3s ease;
+}
+
+.card:hover, .service-card:hover, .testimonial-card:hover, .process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+}
+
+/* Improved fade-in animations */
+@keyframes optimizedFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: optimizedFadeInUp 0.6s ease forwards;
+}
+
+/* Optimize hero image animation */
+@keyframes optimizedFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: optimizedFloat 5s ease-in-out infinite;
+}
+
+/* Form element enhancements */
+input, select, textarea {
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+/* Focus states for accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid #6366F1;
+  outline-offset: 2px;
+}
+
+/* Testimonial heading structure fix */
+.testimonial-info h3.testimonial-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: var(--dark);
+}
+
+.testimonial-info p.testimonial-position {
+  font-size: 0.9rem;
+  color: #6B7280;
+  margin-top: 0;
+}
+
+/* Enhanced visual hierarchy */
+section {
+  padding: 5rem 0;
+}
+
+.section-intro {
+  margin-bottom: 4rem;
+}
+
+.card, .testimonial-card, .process-card {
+  border-radius: 12px;
+}
+
+/* Loading optimization */
+.page-loader {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Enhanced hover states */
+.nav-links a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-gradient);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Image optimizations */
+img[src$=".svg"] {
+  transform: translateZ(0); /* Force GPU acceleration */
+}
+
+/* Testimonial card enhancements */
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--primary-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+  transform: scaleX(1);
+} 
