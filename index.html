@@ -15,11 +15,20 @@
     <meta property="og:url" content="https://inspectorkakui.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Torch AI">
+    <meta property="og:image" content="https://inspectorkakui.github.io/images/torch-ai-logo.png">
     
     <!-- Twitter Card tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Torch AI | Affordable Prompt Engineering Services for Small Businesses">
     <meta name="twitter:description" content="Transform your business with AI-powered prompt engineering. Save time and improve consistency with custom prompt templates designed for small businesses.">
+    <meta name="twitter:image" content="https://inspectorkakui.github.io/images/torch-ai-logo.png">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="images/logo-enhanced.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="images/hero-graphic.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -30,6 +39,7 @@
       "description": "Transform your business with AI-powered prompt engineering. Save time and improve consistency with custom prompt templates designed for small businesses.",
       "url": "https://inspectorkakui.github.io/",
       "email": "torchpromptsai@proton.me",
+      "image": "https://inspectorkakui.github.io/images/torch-ai-logo.png",
       "offers": {
         "@type": "Offer",
         "priceRange": "$50-$300"
@@ -37,15 +47,48 @@
       "serviceType": "Prompt Engineering Services"
     }
     </script>
+    
+    <!-- Primary Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/additions.css">
     <link rel="stylesheet" href="css/enhanced.css">
     <link rel="stylesheet" href="css/refined.css">
     <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fallback for browsers without JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- Inline critical CSS for immediate rendering -->
+    <style>
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+        .fade-out {
+            opacity: 0;
+        }
+        body {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Page Loader -->
@@ -69,10 +112,10 @@
                     <img src="images/logo-enhanced.svg" alt="Torch AI Prompt Engineering Services Logo" style="height: 45px;">
                 </a>
                 <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="services-and-pricing.html">Services</a>
-                    <a href="case-study.html">Case Study</a>
-                    <a href="#contact">Contact</a>
+                    <a href="index.html" class="animated-underline">Home</a>
+                    <a href="services-and-pricing.html" class="animated-underline">Services</a>
+                    <a href="case-study.html" class="animated-underline">Case Study</a>
+                    <a href="#contact" class="animated-underline">Contact</a>
                 </div>
             </nav>
         </div>
@@ -82,37 +125,37 @@
     <section class="hero" style="background-image: url('images/hero-pattern.svg'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="hero-grid">
-                <div class="hero-content">
+                <div class="hero-content animate-fadeInLeft">
                     <h1>Transform Your Business with <span>AI-Powered</span> Prompts</h1>
                     <p class="hero-subtitle">Unlock the full potential of AI tools with expertly crafted prompts designed specifically for small businesses and entrepreneurs.</p>
                     <div class="hero-cta">
-                        <a href="#services" class="btn">Explore Our Services</a>
+                        <a href="#services" class="btn animate-glow">Explore Our Services</a>
                         <a href="#how-it-works" class="btn btn-outline">How It Works</a>
                     </div>
                     <div class="hero-features">
-                        <div class="hero-feature">
+                        <div class="hero-feature delay-100 animate-fadeInUp">
                             <i class="fas fa-bolt"></i>
                             <span>Save 10+ hours weekly</span>
                         </div>
-                        <div class="hero-feature">
+                        <div class="hero-feature delay-200 animate-fadeInUp">
                             <i class="fas fa-check-circle"></i>
                             <span>No technical skills needed</span>
                         </div>
-                        <div class="hero-feature">
+                        <div class="hero-feature delay-300 animate-fadeInUp">
                             <i class="fas fa-sync-alt"></i>
                             <span>Instant implementation</span>
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="images/hero-graphic.svg" alt="AI Prompt Engineering Illustration">
+                <div class="hero-image animate-fadeInRight">
+                    <img src="images/hero-graphic.svg" alt="AI Prompt Engineering Illustration showing network of connected nodes" class="animate-float">
                 </div>
             </div>
         </div>
     </section>
     
     <!-- About Section -->
-    <section class="about" id="about" style="background-image: url('images/light-pattern.svg'); background-size: cover; background-position: center;">
+    <section class="about reveal-on-scroll" id="about" style="background-image: url('images/light-pattern.svg'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="section-intro">
                 <h2>About Our Services</h2>
@@ -125,14 +168,14 @@
                     <p>We provide practical, accessible solutions that enable you to achieve better results from AI tools without requiring technical knowledge or significant investment.</p>
                 </div>
                 <div class="about-img">
-                    <img src="https://via.placeholder.com/500x300?text=AI+Solutions" alt="AI Solutions Illustration">
+                    <img src="https://via.placeholder.com/500x300?text=AI+Solutions" alt="AI Solutions for Small Businesses" class="hover-lift">
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Services Section -->
-    <section class="services" id="services">
+    <section class="services reveal-on-scroll" id="services">
         <div class="container">
             <div class="section-intro">
                 <h2>Our Services</h2>
@@ -203,7 +246,7 @@
                             </div>
                         </div>
                         <div class="service-image">
-                            <img src="images/small-business-kit.svg" alt="Small Business AI Assistant Kit Illustration">
+                            <img src="images/small-business-kit.svg" alt="Small Business AI Assistant Kit showing templates and prompt frameworks" class="hover-lift">
                             <div class="service-testimonial">
                                 <p>"The AI Assistant Kit gave me back 10+ hours every week. It's like having an extra team member."</p>
                                 <div class="mini-author">- Michael C., Solopreneur</div>
@@ -395,30 +438,37 @@
     </section>
     
     <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
+    <section class="how-it-works reveal-on-scroll" id="how-it-works">
         <div class="container">
             <div class="section-intro">
-                <h2>How We Work</h2>
-                <p>Our streamlined process ensures you get maximum value from AI with minimal effort.</p>
+                <h2>How Our Process Works</h2>
+                <p>We've simplified prompt engineering to help you implement AI solutions with minimal effort and maximum results.</p>
             </div>
+            
             <div class="process-visual">
-                <img src="images/how-it-works.svg" alt="Our 3-step process: Consultation, Development, Implementation">
+                <img src="images/how-it-works.svg" alt="Torch AI prompt engineering workflow diagram showing consultation, development, and implementation phases" class="animate-float">
             </div>
+            
             <div class="process-cards">
-                <div class="process-card">
+                <div class="process-card hover-lift">
                     <div class="process-card-number">01</div>
                     <h3>Consultation</h3>
-                    <p>We begin by understanding your specific business needs, challenges, and goals to ensure our solutions align perfectly with what you're looking to achieve.</p>
+                    <p>We start by understanding your specific business needs, challenges, and goals through a brief questionnaire.</p>
                 </div>
-                <div class="process-card">
+                <div class="process-card hover-lift">
                     <div class="process-card-number">02</div>
-                    <h3>Development</h3>
-                    <p>Our prompt engineering experts create custom AI prompt templates and frameworks designed for your specific use cases and business requirements.</p>
+                    <h3>Prompt Development</h3>
+                    <p>Our specialists develop and test custom prompt templates optimized for your exact business requirements.</p>
                 </div>
-                <div class="process-card">
+                <div class="process-card hover-lift">
                     <div class="process-card-number">03</div>
-                    <h3>Implementation</h3>
-                    <p>We provide detailed documentation and support to ensure you can start using your custom prompts immediately, with measurable results from day one.</p>
+                    <h3>Implementation Guide</h3>
+                    <p>You receive detailed documentation and guidance on how to use your new prompt system effectively.</p>
+                </div>
+                <div class="process-card hover-lift">
+                    <div class="process-card-number">04</div>
+                    <h3>Integration Support</h3>
+                    <p>We provide follow-up support to ensure your prompts are working optimally across your business.</p>
                 </div>
             </div>
         </div>
@@ -549,8 +599,8 @@
     </section>
     
     <!-- Footer Wave -->
-    <div style="width: 100%; height: 150px; margin-bottom: -7px; overflow: hidden; line-height: 0; transform: rotate(180deg);">
-        <img src="images/footer-wave.svg" style="position: relative; display: block; width: 100%; height: 150px; transform: rotateY(180deg);">
+    <div style="position: relative; margin-top: -150px;">
+        <img src="images/footer-wave.svg" alt="Decorative wave pattern for footer" style="position: relative; display: block; width: 100%; height: 150px;">
     </div>
     
     <!-- Footer -->

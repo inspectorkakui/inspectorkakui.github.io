@@ -3,279 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study - Torch AI</title>
+    <title>Case Study: Local Bakery Content Transformation | Torch AI</title>
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <meta name="description" content="See how our prompt engineering services helped Sweet Creations Bakery increase online engagement by 200% and save 10 hours per week.">
+    <meta name="keywords" content="prompt engineering case study, AI case study, small business AI, prompt engineering results, bakery marketing AI">
+    <link rel="canonical" href="https://inspectorkakui.github.io/case-study.html">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Case Study: Local Bakery Content Transformation | Torch AI">
+    <meta property="og:description" content="See how our prompt engineering services helped Sweet Creations Bakery increase online engagement by 200% and save 10 hours per week.">
+    <meta property="og:url" content="https://inspectorkakui.github.io/case-study.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Torch AI">
+    <meta property="og:image" content="https://inspectorkakui.github.io/images/torch-ai-logo.png">
+    
+    <!-- Primary Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/additions.css">
     <link rel="stylesheet" href="css/enhanced.css">
     <link rel="stylesheet" href="css/refined.css">
     <link rel="stylesheet" href="css/loader.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/modern-components.css">
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Fallback for browsers without JavaScript -->
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+    
+    <!-- Inline critical CSS -->
     <style>
-        /* Base styles */
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #7db9b6;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-        
-        .container {
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 0;
-        }
-        
-        .navbar {
+            height: 100%;
+            background: #f0f7ff;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+        .fade-out {
+            opacity: 0;
         }
         
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
+        .case-study-hero {
+            background: linear-gradient(135deg, #166088, #4A6FA5);
             color: white;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            opacity: 0.9;
-            transition: opacity 0.3s;
-        }
-        
-        .nav-links a:hover {
-            opacity: 1;
-        }
-        
-        /* Case study styles */
-        .case-study-header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        .case-study-header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .case-study-header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .case-study-content {
             padding: 4rem 0;
-            background-color: white;
-        }
-        
-        .section {
-            margin-bottom: 3rem;
-        }
-        
-        .section h2 {
-            color: var(--secondary-color);
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-        
-        .section p {
-            margin-bottom: 1rem;
-        }
-        
-        .challenge-solution {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .challenge, .solution {
-            flex: 1;
-            min-width: 300px;
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .challenge h3, .solution h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .metric-card {
-            background-color: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
-        .metric-value {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin: 0.5rem 0;
+        .case-results {
+            margin: 3rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
         
-        .testimonial {
-            background-color: #f0f4f8;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            position: relative;
+        .result-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-medium);
         }
         
-        .testimonial::before {
-            content: '"';
-            font-size: 6rem;
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            color: var(--accent-color);
-            opacity: 0.3;
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
         
-        .testimonial-content {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            display: block;
-        }
-        
-        .client-info {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        .process-steps {
-            margin-top: 2rem;
-        }
-        
-        .step {
-            display: flex;
-            margin-bottom: 2rem;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background-color: var(--primary-color);
-            color: white;
-            width: 40px;
-            height: 40px;
+        .result-icon {
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
+            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            flex-shrink: 0;
-            margin-right: 1.5rem;
-            margin-top: 0.2rem;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            font-size: 1.5rem;
         }
         
-        .step-content h3 {
-            color: var(--secondary-color);
+        .result-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
             margin-bottom: 0.5rem;
         }
         
-        /* CTA section */
-        .cta {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-        
-        .cta h2 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #6ca7a4;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .challenge-solution {
-                flex-direction: column;
-            }
-            
-            .step {
-                flex-direction: column;
-            }
-            
-            .step-number {
-                margin-bottom: 1rem;
-                margin-right: 0;
-            }
+        .result-label {
+            color: #6c757d;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -293,185 +124,321 @@
             </div>
         </div>
     </div>
+    
     <!-- Header Section -->
     <header>
         <div class="container">
-            <div class="navbar">
+            <nav class="navbar">
                 <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;">
-                    <img src="images/logo.svg" alt="Torch AI Logo" style="height: 40px;">
+                    <img src="images/logo-enhanced.svg" alt="Torch AI Prompt Engineering Services Logo" style="height: 45px;">
                 </a>
                 <div class="nav-links">
-                    <a href="index.html#about">About</a>
-                    <a href="index.html#services">Services</a>
-                    <a href="index.html#portfolio">Portfolio</a>
-                    <a href="index.html#contact">Contact</a>
+                    <a href="index.html" class="animated-underline">Home</a>
+                    <a href="services-and-pricing.html" class="animated-underline">Services</a>
+                    <a href="case-study.html" class="animated-underline">Case Study</a>
+                    <a href="#contact" class="animated-underline">Contact</a>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
     
-    <!-- Case Study Header -->
-    <section class="case-study-header">
+    <!-- Case Study Hero -->
+    <section class="case-study-hero">
         <div class="container">
-            <h1>Case Study: Local Bakery Content Transformation</h1>
-            <p>How prompt engineering helped a small bakery increase their online engagement by 200% and save 10 hours per week</p>
+            <h1 class="animate-fadeInUp">Case Study: Local Bakery Content Transformation</h1>
+            <p class="animate-fadeInUp delay-100">How prompt engineering helped a small bakery increase their online engagement by 200% and save 10 hours per week</p>
         </div>
     </section>
     
-    <!-- Case Study Content -->
-    <section class="case-study-content">
+    <!-- Client Overview -->
+    <section class="client-overview reveal-on-scroll">
         <div class="container">
-            <div class="section">
+            <div class="section-intro">
                 <h2>Client Overview</h2>
-                <p>Sweet Creations Bakery is a small, family-owned business specializing in artisanal bread and pastries. Located in a suburban community, they have been operating for five years with a loyal local customer base of approximately 500 regular customers.</p>
-                <p>With increasing competition from larger bakeries and chains, the owner wanted to expand their online presence but struggled with creating engaging content consistently. With only three staff members and no dedicated marketing person, the owner was spending 12+ hours weekly attempting to manage social media and email marketing, with inconsistent results.</p>
-                
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h3>The Challenge</h3>
-                        <ul>
-                            <li>Limited time to create social media content and email newsletters</li>
-                            <li>Inconsistent brand messaging across different platforms</li>
-                            <li>Difficulty showcasing their unique selling points effectively</li>
-                            <li>No clear process for responding to customer inquiries online</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="solution">
-                        <h3>The Solution</h3>
-                        <ul>
-                            <li>Custom Content Creator's Toolkit with 15 specialized prompts</li>
-                            <li>Bakery-specific product description templates</li>
-                            <li>Seasonal promotion framework with calendar integration</li>
-                            <li>Email newsletter template system with engagement hooks</li>
-                            <li>Visual-to-text prompt system for showcasing bakery items</li>
-                            <li>Detailed implementation guide with bakery-specific examples</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
             
-            <div class="section">
-                <h2>Process & Implementation</h2>
-                <p>After an initial consultation to understand Sweet Creations' unique needs and challenges, we developed a custom prompt engineering solution that would allow them to leverage AI tools effectively without requiring technical expertise.</p>
+            <div class="modern-card">
+                <div class="modern-card-header">
+                    <div class="modern-card-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="modern-card-title">Sweet Creations Bakery</h3>
+                </div>
                 
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Discovery & Analysis</h3>
-                            <p>We conducted a thorough analysis of the bakery's existing content, brand voice, and customer communication patterns. This allowed us to identify key areas where prompt engineering could have the greatest impact.</p>
-                        </div>
-                    </div>
+                <div class="modern-card-content">
+                    <p>Sweet Creations Bakery is a small, family-owned business specializing in artisanal bread and pastries. Located in a suburban community, they have been operating for five years with a loyal local customer base of approximately 500 regular customers.</p>
                     
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Custom Prompt Development</h3>
-                            <p>Based on our findings, we created a collection of specialized prompts tailored to Sweet Creations' specific needs. These included templates for social media posts, email newsletters, product descriptions, and customer service responses.</p>
+                    <div class="client-details">
+                        <div class="detail-item">
+                            <strong>Industry:</strong> Food & Beverage
                         </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Implementation Training</h3>
-                            <p>We provided hands-on training for the bakery owner and staff, showing them how to use the prompt templates with popular AI tools. The training focused on practical application rather than technical concepts, making it accessible for everyone involved.</p>
+                        <div class="detail-item">
+                            <strong>Business Size:</strong> Small (5 employees)
                         </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Refinement & Optimization</h3>
-                            <p>After two weeks of implementation, we reviewed the results and made adjustments to the prompts based on real-world performance and feedback from the bakery staff. This iterative process ensured the solution was perfectly aligned with their needs.</p>
+                        <div class="detail-item">
+                            <strong>Target Market:</strong> Local community food enthusiasts
+                        </div>
+                        <div class="detail-item">
+                            <strong>Primary Challenge:</strong> Limited time for content creation and social media engagement
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="section">
-                <h2>Results & Impact</h2>
-                <p>The implementation of our custom prompt engineering solution transformed Sweet Creations' online presence and operational efficiency, delivering measurable results within the first month.</p>
-                
-                <div class="metrics">
-                    <div class="metric-card">
-                        <h3>Time Saved</h3>
-                        <div class="metric-value">9.5 hrs</div>
-                        <p>Weekly time savings on content creation (measured over 8-week period)</p>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <h3>Content Volume</h3>
-                        <div class="metric-value">+320%</div>
-                        <p>Increase in social media posting frequency with consistent quality</p>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <h3>Email Open Rate</h3>
-                        <div class="metric-value">+42%</div>
-                        <p>Improvement in newsletter engagement with optimized content</p>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <h3>Revenue Impact</h3>
-                        <div class="metric-value">$2,850</div>
-                        <p>Monthly increase in sales attributed to improved online marketing</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-content">The Content Creator's Toolkit has transformed our marketing completely. As a baker, not a marketer, I was spending nearly 12 hours weekly trying to maintain our social media and newsletters, often feeling frustrated with the results. Now I create an entire month of content in just 2.5 hours. The bakery-specific templates make it easy to showcase our products in a way that actually drives sales - our seasonal promotion framework alone generated $1,875 in additional revenue last month. The implementation guide was incredibly practical - no technical jargon, just clear instructions with bakery-specific examples.</p>
-                    <span class="testimonial-author">Sarah Johnson</span>
-                    <span class="client-info">Owner, Sweet Creations Bakery</span>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>Solution Components</h2>
-                <p>The Content Creator's Toolkit we developed for Sweet Creations included several specialized components designed specifically for their bakery business:</p>
-                
-                <ul style="margin-left: 2rem; margin-bottom: 2rem;">
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Bakery Storytelling Framework:</strong> A set of specialized prompts for crafting engaging narratives around signature recipes, family baking traditions, and ingredient sourcing stories, complete with sensory language enhancement.
-                    </li>
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Visual-to-Text Translation System:</strong> A multi-stage prompt sequence that helps transform bakery product photos into mouthwatering descriptions, allowing the staff to quickly create engaging content from their daily production.
-                    </li>
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Seasonal Promotion Calendar:</strong> A structured template system aligned with 12 monthly themes and major holidays, with pre-built promotional frameworks that could be customized in under 5 minutes.
-                    </li>
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Customer Testimonial Amplifier:</strong> A prompt framework for expanding brief customer feedback into compelling social proof stories while maintaining authenticity and credibility.
-                    </li>
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Email Sequence Builder:</strong> A modular system of newsletter frameworks featuring bakery-specific content blocks that could be arranged into diverse layouts without requiring design skills.
-                    </li>
-                    <li style="margin-bottom: 1rem;">
-                        <strong>Implementation Playbook:</strong> A bakery-specific guide with exact examples showing before/after transformations using actual Sweet Creations products and customer scenarios.
-                    </li>
-                </ul>
-                
-                <p>Each component was designed to be user-friendly and adaptable, allowing the bakery staff to make adjustments as needed without requiring technical expertise or constant support.</p>
             </div>
         </div>
     </section>
     
-    <!-- CTA Section -->
-    <section class="cta">
+    <!-- Challenge -->
+    <section class="challenge-section reveal-on-scroll">
         <div class="container">
-            <h2>Ready to Transform Your Business with AI?</h2>
-            <p>Contact us to discuss how a custom prompt engineering solution can address your specific challenges.</p>
-            <a href="mailto:torchpromptsai@proton.me" class="btn">Email Us Today</a>
+            <div class="section-intro">
+                <h2>The Challenge</h2>
+                <p>Before engaging our services, Sweet Creations Bakery faced several key challenges in their digital marketing efforts.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="feature-title">Time Constraints</h3>
+                    <p class="feature-description">The owner spent 15+ hours weekly creating content for social media, often staying late after closing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Inconsistent Engagement</h3>
+                    <p class="feature-description">Social media posts received minimal engagement, with average likes around 10-15 per post.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3 class="feature-title">No Content Strategy</h3>
+                    <p class="feature-description">Posts were published sporadically without a cohesive theme or schedule.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comment-slash"></i>
+                    </div>
+                    <h3 class="feature-title">Slow Customer Response</h3>
+                    <p class="feature-description">Average response time to customer queries was 24+ hours, frequently losing sales opportunities.</p>
+                </div>
+            </div>
         </div>
     </section>
     
-    <!-- Footer Wave -->
-    <div style="width: 100%; height: 150px; margin-bottom: -7px; overflow: hidden; line-height: 0; transform: rotate(180deg);">
-        <img src="images/footer-wave.svg" style="position: relative; display: block; width: 100%; height: 150px; transform: rotateY(180deg);">
-    </div>
+    <!-- Solution -->
+    <section class="solution-section reveal-on-scroll">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Our Solution</h2>
+                <p>We developed a comprehensive prompt engineering framework tailored specifically for Sweet Creations Bakery.</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item animate-fadeInLeft">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <h3>Content Generation System</h3>
+                        <p>We created a series of custom prompts for generating engaging social media content, product descriptions, and promotional materials that maintained the bakery's unique brand voice.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-fadeInRight">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <h3>Engagement Prompts</h3>
+                        <p>Developed templates for creating interactive posts (polls, questions, fill-in-the-blanks) that encouraged customer participation and boosted algorithm visibility.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-fadeInLeft">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <h3>Customer Service Framework</h3>
+                        <p>Implemented a system of response templates that could be quickly customized for common customer inquiries, special orders, and frequently asked questions.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-fadeInRight">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <h3>Content Calendar System</h3>
+                        <p>Created a prompt-based content planning system that generated ideas for an entire month based on holidays, seasons, and special events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <!-- Footer -->
+    <!-- Results -->
+    <section class="results-section reveal-on-scroll">
+        <div class="container">
+            <div class="section-intro">
+                <h2>The Results</h2>
+                <p>After implementing our prompt engineering solutions, Sweet Creations Bakery experienced dramatic improvements across multiple metrics:</p>
+            </div>
+            
+            <div class="case-results">
+                <div class="result-card animate-fadeInUp">
+                    <div class="result-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="result-value">10+</div>
+                    <div class="result-label">Hours saved weekly</div>
+                </div>
+                
+                <div class="result-card animate-fadeInUp delay-100">
+                    <div class="result-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="result-value">200%</div>
+                    <div class="result-label">Increase in engagement</div>
+                </div>
+                
+                <div class="result-card animate-fadeInUp delay-200">
+                    <div class="result-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="result-value">35%</div>
+                    <div class="result-label">Increase in special orders</div>
+                </div>
+                
+                <div class="result-card animate-fadeInUp delay-300">
+                    <div class="result-icon">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <div class="result-value">15 min</div>
+                    <div class="result-label">Average response time</div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card-modern">
+                <div class="testimonial-quote">
+                    "I used to spend hours staring at a blank screen, trying to figure out what to post. Now I can create a week's worth of content in under an hour, and our engagement has skyrocketed. The prompt engineering system from Torch AI has transformed how we connect with customers online."
+                </div>
+                <div class="testimonial-author-modern">
+                    <div class="testimonial-avatar">
+                        <img src="https://via.placeholder.com/60x60" alt="Emily Rodriguez - Owner of Sweet Creations Bakery portrait">
+                    </div>
+                    <div class="testimonial-info-modern">
+                        <h4 class="testimonial-name">Emily Rodriguez</h4>
+                        <p class="testimonial-role">Owner, Sweet Creations Bakery</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Details -->
+    <section class="implementation-section reveal-on-scroll">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Implementation Process</h2>
+                <p>Our work with Sweet Creations Bakery followed our proven process for creating practical, immediately usable prompt engineering solutions.</p>
+            </div>
+            
+            <div class="modern-card">
+                <div class="modern-card-content">
+                    <h3>Phase 1: Analysis & Discovery</h3>
+                    <p>We conducted a detailed analysis of the bakery's existing content, target audience, and specific business challenges through a brief questionnaire and review of their social media presence.</p>
+                    
+                    <h3>Phase 2: Custom Prompt Development</h3>
+                    <p>Based on our findings, we created a suite of prompt templates specifically designed for a local bakery, each addressing a particular business need:</p>
+                    
+                    <ul>
+                        <li>Product description prompts that highlight sensory details and unique selling points</li>
+                        <li>Customer engagement prompts designed to encourage comments and shares</li>
+                        <li>Seasonal promotion prompts tied to local events and holidays</li>
+                        <li>FAQ response templates for common customer inquiries</li>
+                    </ul>
+                    
+                    <h3>Phase 3: Implementation & Training</h3>
+                    <p>We provided the owner with a comprehensive guide on how to use each prompt, including examples and variations. The implementation was straightforward, requiring no technical knowledge.</p>
+                    
+                    <h3>Phase 4: Refinement & Optimization</h3>
+                    <p>After two weeks of use, we analyzed the results and made minor adjustments to optimize performance based on which content was generating the most engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Takeaways -->
+    <section class="takeaways-section reveal-on-scroll">
+        <div class="container">
+            <div class="section-intro">
+                <h2>Key Takeaways</h2>
+                <p>This case study demonstrates how prompt engineering can transform operations for small businesses.</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Efficiency Amplification</h3>
+                    <p class="feature-description">Proper prompt engineering can dramatically reduce time spent on content creation while improving quality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="feature-title">Engagement Growth</h3>
+                    <p class="feature-description">Strategically designed content prompts create more compelling, shareable content that resonates with customers.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">Expertise Not Required</h3>
+                    <p class="feature-description">Even non-technical business owners can implement AI solutions with the right prompt engineering framework.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="feature-title">Measurable ROI</h3>
+                    <p class="feature-description">The investment in prompt engineering services delivered clear, quantifiable business benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action -->
+    <section class="cta-section reveal-on-scroll">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to Transform Your Business with AI?</h2>
+                <p>Contact us today to discuss how our prompt engineering services can help your small business save time, improve customer engagement, and boost productivity.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn-modern animate-glow">
+                        <i class="fas fa-envelope btn-icon-left"></i>
+                        <span>Contact Us</span>
+                    </a>
+                    <a href="services-and-pricing.html" class="btn-modern btn-outline">
+                        <span>View Services & Pricing</span>
+                        <i class="fas fa-external-link-alt btn-icon-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
     <footer>
         <div class="container">
             <p>&copy; 2025 Torch AI. All rights reserved.</p>
@@ -479,17 +446,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/refined.js"></script>
-    <script>
-        // Page loader animation
-        window.addEventListener('load', function() {
-            const loader = document.querySelector('.page-loader');
-            setTimeout(function() {
-                loader.classList.add('fade-out');
-            }, 500);
-        });
-    </script>
 </body>
 </html>

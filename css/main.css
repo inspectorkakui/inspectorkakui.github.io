@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Modern AI-inspired color palette */
+  /* Enhanced AI-inspired color palette */
   --primary: #4361ee;
   --primary-dark: #3a0ca3;
   --secondary: #7209b7;
@@ -13,11 +13,18 @@
   --dark: #1e2a45;
   --bg: #f0f7ff;
   
-  /* Gradients & Effects */
+  /* Improved Gradients & Effects */
   --primary-gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+  --secondary-gradient: linear-gradient(135deg, #7209b7, #4361ee);
   --accent-gradient: linear-gradient(135deg, #4cc9f0, #80ffdb);
-  --card-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
-  --hover-shadow: 0 15px 35px rgba(67, 97, 238, 0.2);
+  --card-shadow: 0 10px 25px rgba(67, 97, 238, 0.12);
+  --hover-shadow: 0 15px 35px rgba(67, 97, 238, 0.25);
+  --text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+  /* Animation Speeds */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 /* Base Styles */
@@ -29,6 +36,7 @@ body {
   background-image: radial-gradient(circle at top right, rgba(76, 201, 240, 0.1), rgba(67, 97, 238, 0.05)), 
                     radial-gradient(circle at bottom left, rgba(114, 9, 183, 0.05), transparent);
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -41,11 +49,18 @@ h1, h2, h3, h4, h5, h6 {
 header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
-  box-shadow: 0 5px 20px rgba(67, 97, 238, 0.1);
+  box-shadow: 0 5px 20px rgba(67, 97, 238, 0.15);
   position: sticky;
   top: 0;
   z-index: 100;
   padding: 1.2rem 0;
+  transition: all var(--transition-medium);
+}
+
+header.scrolled {
+  padding: 0.8rem 0;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
 }
 
 .logo {
@@ -54,6 +69,11 @@ header {
   color: var(--primary-dark);
   display: flex;
   align-items: center;
+  transition: transform var(--transition-medium);
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .logo::before {
@@ -70,7 +90,7 @@ header {
 
 @keyframes pulse {
   0% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+  50% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 15px var(--accent); }
   100% { opacity: 0.5; transform: scale(1); }
 }
 
@@ -168,16 +188,23 @@ header {
   font-size: 1rem;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3);
-  transition: all 0.3s ease;
+  transition: all var(--transition-medium);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: none;
+  cursor: pointer;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.02);
   box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
   color: white;
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
 }
 
 .btn::after {
@@ -189,7 +216,7 @@ header {
   height: 100%;
   background: var(--accent-gradient);
   z-index: -1;
-  transition: all 0.3s ease;
+  transition: all var(--transition-medium);
   opacity: 0;
 }
 
