@@ -1,0 +1,128 @@
+/* Additional Styles for Torch AI */
+
+/* Portfolio Badge */
+.portfolio-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  color: var(--dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 10;
+}
+
+/* Contact Section */
+.contact-info {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-method {
+  margin-top: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-method h3 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.contact-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .hero {
+    padding: 5rem 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-links {
+    margin-top: 1rem;
+  }
+  
+  .nav-links a {
+    margin: 0 0.7rem;
+  }
+  
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* CTA Content */
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer Styling */
+.footer-bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}

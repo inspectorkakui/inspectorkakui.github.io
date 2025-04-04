@@ -3,263 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torch AI</title>
-    <style>
-        /* Base styles */
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --accent-color: #7db9b6;
-            --light-color: #f8f9fa;
-            --dark-color: #212529;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header styles */
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem 0;
-        }
-        
-        .hero {
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Section styles */
-        section {
-            padding: 4rem 0;
-        }
-        
-        section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
-        }
-        
-        /* About section */
-        .about {
-            background-color: white;
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-img {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-        
-        .about-img img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Services section */
-        .services {
-            background-color: #f5f7fa;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .service-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .service-card ul {
-            list-style-position: inside;
-            margin-top: 1rem;
-        }
-        
-        .service-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Portfolio section */
-        .portfolio {
-            background-color: white;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .portfolio-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .portfolio-content {
-            padding: 1.5rem;
-            background: white;
-        }
-        
-        .portfolio-content h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .portfolio-img img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        /* CTA section */
-        .cta {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 4rem 0;
-        }
-        
-        .cta h2 {
-            color: white;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1.5rem;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: #6ca7a4;
-        }
-        
-        /* Contact section */
-        .contact {
-            background-color: #f5f7fa;
-        }
-        
-        .contact-info {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-method {
-            margin-top: 2rem;
-        }
-        
-        .contact-method h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>Torch AI | Prompt Engineering Services</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/additions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="container">
-            <nav style="display: flex; justify-content: space-between; padding: 1rem 0;">
-                <a href="index.html" style="color: white; text-decoration: none; font-size: 1.5rem; font-weight: bold;">Torch AI</a>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-                    <a href="services-and-pricing.html" style="color: white; text-decoration: none;">Services</a>
-                    <a href="case-study.html" style="color: white; text-decoration: none;">Case Study</a>
-                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact</a>
+            <nav class="navbar">
+                <a href="index.html" class="logo">Torch AI</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="services-and-pricing.html">Services</a>
+                    <a href="case-study.html">Case Study</a>
+                    <a href="#contact">Contact</a>
                 </div>
             </nav>
-            <div class="hero">
-                <h1>Torch AI</h1>
-                <p>Transforming Business Potential with AI-Powered Prompts</p>
-            </div>
         </div>
     </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your Business with <span>AI-Powered</span> Prompts</h1>
+                <p>Unlock the full potential of AI tools with expertly crafted prompts designed specifically for small businesses and entrepreneurs.</p>
+                <a href="#services" class="btn">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
     
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2>About Our Services</h2>
+            <div class="section-intro">
+                <h2>About Our Services</h2>
+                <p>We help small businesses harness the power of AI through strategic prompt engineering.</p>
+            </div>
             <div class="about-content">
                 <div class="about-text">
                     <p>Welcome to Torch AI, where we help small businesses and entrepreneurs harness the power of AI technology through carefully crafted prompts.</p>
@@ -276,83 +58,119 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <div class="section-intro">
+                <h2>Our Services</h2>
+                <p>Practical prompt engineering solutions tailored for small businesses and entrepreneurs.</p>
+            </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <h3>Small Business AI Assistant Kit</h3>
-                    <p>Ready-to-use prompt collections for everyday business tasks.</p>
-                    <ul>
-                        <li>Marketing & content creation</li>
-                        <li>Customer service responses</li>
-                        <li>Business operations</li>
-                        <li>Social media management</li>
-                    </ul>
-                    <p><strong>Price range:</strong> $50-$100</p>
-                    <p><a href="services-and-pricing.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Details →</a></p>
+                <div class="card service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="price-tag">$50-$100</div>
+                        <h3 class="card-title">Small Business AI Assistant Kit</h3>
+                        <p>Ready-to-use prompt collections for everyday business tasks.</p>
+                        <ul class="features-list">
+                            <li>Marketing & content creation</li>
+                            <li>Customer service responses</li>
+                            <li>Business operations</li>
+                            <li>Social media management</li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="services-and-pricing.html" class="btn">View Details</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <h3>Content Creator's Prompt Toolkit</h3>
-                    <p>Specialized prompt collection for engaging content creation.</p>
-                    <ul>
-                        <li>Blog and article frameworks</li>
-                        <li>Social media content templates</li>
-                        <li>Email marketing sequences</li>
-                        <li>Content repurposing system</li>
-                    </ul>
-                    <p><strong>Price range:</strong> $150-$250</p>
-                    <p><a href="services-and-pricing.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Details →</a></p>
+                <div class="card service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <div class="price-tag">$150-$250</div>
+                        <h3 class="card-title">Content Creator's Prompt Toolkit</h3>
+                        <p>Specialized prompt collection for engaging content creation.</p>
+                        <ul class="features-list">
+                            <li>Blog and article frameworks</li>
+                            <li>Social media content templates</li>
+                            <li>Email marketing sequences</li>
+                            <li>Content repurposing system</li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="services-and-pricing.html" class="btn">View Details</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="service-card">
-                    <h3>Customer Service Response Framework</h3>
-                    <p>Comprehensive system for consistent, personalized customer communications.</p>
-                    <ul>
-                        <li>Response templates for common scenarios</li>
-                        <li>Tone adaptation framework</li>
-                        <li>Escalation handling prompts</li>
-                        <li>Social media response templates</li>
-                    </ul>
-                    <p><strong>Price range:</strong> $200-$300</p>
-                    <p><a href="services-and-pricing.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">View Details →</a></p>
+                <div class="card service-card">
+                    <div class="card-body">
+                        <div class="service-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="price-tag">$200-$300</div>
+                        <h3 class="card-title">Customer Service Response Framework</h3>
+                        <p>Comprehensive system for consistent, personalized customer communications.</p>
+                        <ul class="features-list">
+                            <li>Response templates for common scenarios</li>
+                            <li>Tone adaptation framework</li>
+                            <li>Escalation handling prompts</li>
+                            <li>Social media response templates</li>
+                        </ul>
+                        <div class="card-footer">
+                            <a href="services-and-pricing.html" class="btn">View Details</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <section class="portfolio section-center" id="portfolio">
         <div class="container">
-            <h2>Portfolio Examples</h2>
+            <div class="section-intro">
+                <h2>Portfolio Examples</h2>
+                <p>See how our prompt engineering solutions have helped real businesses achieve measurable results.</p>
+            </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
+                <div class="card portfolio-item">
+                    <div class="portfolio-badge">Case Study</div>
+                    <div class="card-image">
                         <img src="https://via.placeholder.com/600x400?text=Content+Creation" alt="Content Creation">
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Content Creator's Toolkit</h3>
-                        <p>A comprehensive set of prompts for blog posts, social media content, and marketing copy that helped a local business increase their content output by 300%.</p>
-                        <p><a href="case-study.html" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">Read Case Study →</a></p>
+                    <div class="card-body">
+                        <h3 class="card-title">Content Creator's Toolkit</h3>
+                        <p class="card-text">A comprehensive set of prompts for blog posts, social media content, and marketing copy that helped a local business increase their content output by 300%.</p>
+                        <div class="card-footer">
+                            <a href="case-study.html" class="btn">Read Case Study</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
+                <div class="card portfolio-item">
+                    <div class="card-image">
                         <img src="https://via.placeholder.com/600x400?text=Customer+Service" alt="Customer Service">
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Customer Service Response Framework</h3>
-                        <p>A system of prompts that enabled a small e-commerce business to reduce customer response time by 75% while maintaining personal touch and quality.</p>
+                    <div class="card-body">
+                        <h3 class="card-title">Customer Service Response Framework</h3>
+                        <p class="card-text">A system of prompts that enabled a small e-commerce business to reduce customer response time by 75% while maintaining personal touch and quality.</p>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn">Similar Project?</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
+                <div class="card portfolio-item">
+                    <div class="card-image">
                         <img src="https://via.placeholder.com/600x400?text=Business+Operations" alt="Business Operations">
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Solo Entrepreneur Productivity System</h3>
-                        <p>A collection of prompts for planning, organization, and project management that helped a consultant save 10+ hours weekly on administrative tasks.</p>
+                    <div class="card-body">
+                        <h3 class="card-title">Solo Entrepreneur Productivity System</h3>
+                        <p class="card-text">A collection of prompts for planning, organization, and project management that helped a consultant save 10+ hours weekly on administrative tasks.</p>
+                        <div class="card-footer">
+                            <a href="#contact" class="btn">Similar Project?</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -362,23 +180,30 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Ready to Transform Your Business with AI?</h2>
-            <p>Let's discuss how prompt engineering can solve your specific business challenges.</p>
-            <a href="#contact" class="btn">Contact Us Today</a>
+            <div class="cta-content">
+                <h2>Ready to Transform Your Business with AI?</h2>
+                <p>Let's discuss how prompt engineering can solve your specific business challenges.</p>
+                <a href="#contact" class="btn">Contact Us Today</a>
+            </div>
         </div>
     </section>
     
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
+            <div class="section-intro">
+                <h2>Get In Touch</h2>
+                <p>Interested in learning more about our services or discussing a potential project?</p>
+            </div>
             <div class="contact-info">
-                <p>Interested in learning more about our services or discussing a potential project? Reach out to us today!</p>
+                <p>Reach out to us today with details about your business and project requirements for a prompt response.</p>
                 
                 <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <h3>Email</h3>
                     <p>torchpromptsai@proton.me</p>
-                    <p style="margin-top: 0.5rem;">Please include details about your business and project requirements for a prompt response.</p>
                 </div>
             </div>
         </div>
@@ -387,8 +212,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Torch AI. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Torch AI. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
