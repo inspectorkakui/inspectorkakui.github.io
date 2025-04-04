@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0f7ff" />
+      <stop offset="100%" stop-color="#e6f0ff" />
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4361ee" />
+      <stop offset="100%" stop-color="#4cc9f0" />
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7209b7" />
+      <stop offset="100%" stop-color="#3a0ca3" />
+    </linearGradient>
+    <linearGradient id="tealGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0" />
+      <stop offset="100%" stop-color="#80ffdb" />
+    </linearGradient>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)" rx="20" ry="20" />
+  
+  <!-- Decorative Pattern -->
+  <g opacity="0.07">
+    <path d="M0,100 L800,100" stroke="#4361ee" stroke-width="1" />
+    <path d="M0,200 L800,200" stroke="#4361ee" stroke-width="1" />
+    <path d="M0,300 L800,300" stroke="#4361ee" stroke-width="1" />
+    <path d="M0,400 L800,400" stroke="#4361ee" stroke-width="1" />
+    <path d="M0,500 L800,500" stroke="#4361ee" stroke-width="1" />
+    <path d="M100,0 L100,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M200,0 L200,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M300,0 L300,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M400,0 L400,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M500,0 L500,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M600,0 L600,600" stroke="#4361ee" stroke-width="1" />
+    <path d="M700,0 L700,600" stroke="#4361ee" stroke-width="1" />
+  </g>
+  
+  <!-- Abstract Circular Elements -->
+  <circle cx="200" cy="150" r="100" fill="url(#blueGradient)" opacity="0.05" />
+  <circle cx="600" cy="450" r="120" fill="url(#tealGradient)" opacity="0.05" />
+  <circle cx="400" cy="300" r="150" fill="url(#purpleGradient)" opacity="0.03" />
+  
+  <!-- Central Hub - Communication Center -->
+  <g transform="translate(400, 300)" filter="url(#dropShadow)">
+    <!-- Main Framework Hub -->
+    <circle cx="0" cy="0" r="100" fill="white" />
+    <circle cx="0" cy="0" r="90" fill="url(#bgGradient)" opacity="0.5" />
+    
+    <!-- Central Icon -->
+    <g filter="url(#softGlow)">
+      <circle cx="0" cy="0" r="40" fill="url(#blueGradient)" opacity="0.9" />
+      <!-- Chat Bubble Icon -->
+      <path d="M-15,-15 L-15,5 C-15,10 -10,15 -5,15 L5,15 L15,25 L15,15 L15,15 C20,15 25,10 25,5 L25,-15 C25,-20 20,-25 15,-25 L-5,-25 C-10,-25 -15,-20 -15,-15 Z" fill="white" />
+    </g>
+    
+    <!-- Framework Sections -->
+    <g>
+      <!-- Section 1: Customer Query -->
+      <g transform="rotate(0)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#blueGradient)" opacity="0.8" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#4361ee" text-anchor="middle" dominant-baseline="middle">1</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Query</text>
+      </g>
+      
+      <!-- Section 2: Tone Analysis -->
+      <g transform="rotate(45)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#blueGradient)" opacity="0.7" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#4361ee" text-anchor="middle" dominant-baseline="middle">2</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Analysis</text>
+      </g>
+      
+      <!-- Section 3: Solution Development -->
+      <g transform="rotate(90)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#purpleGradient)" opacity="0.8" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#7209b7" text-anchor="middle" dominant-baseline="middle">3</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Solution</text>
+      </g>
+      
+      <!-- Section 4: Personalization -->
+      <g transform="rotate(135)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#purpleGradient)" opacity="0.7" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#7209b7" text-anchor="middle" dominant-baseline="middle">4</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Personalize</text>
+      </g>
+      
+      <!-- Section 5: Brand Voice -->
+      <g transform="rotate(180)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#tealGradient)" opacity="0.8" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#4cc9f0" text-anchor="middle" dominant-baseline="middle">5</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Brand Voice</text>
+      </g>
+      
+      <!-- Section 6: Clarity Check -->
+      <g transform="rotate(225)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#tealGradient)" opacity="0.7" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#4cc9f0" text-anchor="middle" dominant-baseline="middle">6</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Clarity</text>
+      </g>
+      
+      <!-- Section 7: Delivery -->
+      <g transform="rotate(270)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#blueGradient)" opacity="0.6" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#4361ee" text-anchor="middle" dominant-baseline="middle">7</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Delivery</text>
+      </g>
+      
+      <!-- Section 8: Follow-up -->
+      <g transform="rotate(315)">
+        <path d="M0,0 L60,0 A60,60 0 0,1 42.4,42.4 L0,0" fill="url(#purpleGradient)" opacity="0.6" />
+        <g transform="translate(35, 20)">
+          <circle cx="0" cy="0" r="15" fill="white" opacity="0.9" />
+          <text x="0" y="0" font-family="Arial" font-size="10" fill="#7209b7" text-anchor="middle" dominant-baseline="middle">8</text>
+        </g>
+        <text x="35" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle" transform="rotate(22.5, 35, 50)">Follow-up</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Customer Query Bubble -->
+  <g transform="translate(200, 100)" filter="url(#dropShadow)">
+    <rect x="-100" y="-50" width="200" height="100" rx="20" ry="20" fill="white" />
+    <rect x="-90" y="-40" width="180" height="80" rx="15" ry="15" fill="#f8f9fa" />
+    
+    <!-- Customer Avatar -->
+    <circle cx="-70" cy="-20" r="15" fill="#eee" />
+    <path d="M-70,-23 A 7,7 0 0,1 -63,-16 A 7,7 0 0,1 -70,-9 A 7,7 0 0,1 -77,-16 A 7,7 0 0,1 -70,-23 Z" fill="#ccc" />
+    <path d="M-77,-5 A 14,14 0 0,0 -63,-5 A 25,5 0 0,1 -77,-5 Z" fill="#ccc" />
+    
+    <!-- Query Text -->
+    <rect x="-40" y="-30" width="120" height="5" rx="2" ry="2" fill="#333" opacity="0.7" />
+    <rect x="-40" y="-20" width="100" height="5" rx="2" ry="2" fill="#333" opacity="0.7" />
+    <rect x="-40" y="-10" width="110" height="5" rx="2" ry="2" fill="#333" opacity="0.7" />
+    <rect x="-40" y="0" width="80" height="5" rx="2" ry="2" fill="#333" opacity="0.7" />
+    <rect x="-40" y="10" width="90" height="5" rx="2" ry="2" fill="#333" opacity="0.7" />
+    
+    <!-- Animated Pulse -->
+    <rect x="-100" y="-50" width="200" height="100" rx="20" ry="20" fill="url(#blueGradient)" opacity="0" stroke="url(#blueGradient)" stroke-width="2">
+      <animate attributeName="opacity" values="0;0.1;0" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="2;4;2" dur="3s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Response Template -->
+  <g transform="translate(600, 150)" filter="url(#dropShadow)">
+    <rect x="-120" y="-80" width="240" height="160" rx="15" ry="15" fill="white" />
+    
+    <!-- Template Header -->
+    <rect x="-120" y="-80" width="240" height="30" rx="15" ry="15" fill="url(#purpleGradient)" opacity="0.8" />
+    <text x="0" y="-60" font-family="Arial" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">Response Template</text>
+    
+    <!-- Template Structure -->
+    <g transform="translate(0, -30)">
+      <!-- Greeting Section -->
+      <rect x="-100" y="0" width="200" height="20" rx="5" ry="5" fill="#f8f9fa" />
+      <rect x="-95" y="5" width="60" height="10" rx="2" ry="2" fill="url(#blueGradient)" opacity="0.2" />
+      <text x="-90" y="12" font-family="Arial" font-size="8" fill="#666">Greeting</text>
+      
+      <!-- Acknowledgment Section -->
+      <rect x="-100" y="25" width="200" height="20" rx="5" ry="5" fill="#f8f9fa" />
+      <rect x="-95" y="30" width="100" height="10" rx="2" ry="2" fill="url(#purpleGradient)" opacity="0.2" />
+      <text x="-90" y="37" font-family="Arial" font-size="8" fill="#666">Acknowledgment</text>
+      
+      <!-- Solution Section -->
+      <rect x="-100" y="50" width="200" height="20" rx="5" ry="5" fill="#f8f9fa" />
+      <rect x="-95" y="55" width="120" height="10" rx="2" ry="2" fill="url(#tealGradient)" opacity="0.3" />
+      <text x="-90" y="62" font-family="Arial" font-size="8" fill="#666">Solution Description</text>
+      
+      <!-- Next Steps Section -->
+      <rect x="-100" y="75" width="200" height="20" rx="5" ry="5" fill="#f8f9fa" />
+      <rect x="-95" y="80" width="80" height="10" rx="2" ry="2" fill="url(#blueGradient)" opacity="0.2" />
+      <text x="-90" y="87" font-family="Arial" font-size="8" fill="#666">Next Steps</text>
+    </g>
+  </g>
+  
+  <!-- AI Analysis Panel -->
+  <g transform="translate(170, 450)" filter="url(#dropShadow)">
+    <rect x="-120" y="-80" width="240" height="160" rx="15" ry="15" fill="white" />
+    
+    <!-- Header -->
+    <rect x="-120" y="-80" width="240" height="30" rx="15" ry="15" fill="url(#blueGradient)" />
+    <text x="0" y="-60" font-family="Arial" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">Tone Detection</text>
+    
+    <!-- Sentiment Analysis -->
+    <g transform="translate(0, -30)">
+      <!-- Sentiment Meter -->
+      <rect x="-100" y="10" width="200" height="15" rx="7.5" ry="7.5" fill="#f0f0f0" />
+      <rect x="-100" y="10" width="50" height="15" rx="7.5" ry="7.5" fill="#ff4d4f" opacity="0.5" />
+      <text x="-90" y="20" font-family="Arial" font-size="8" fill="#ff4d4f">Frustrated</text>
+      <circle cx="-50" cy="17.5" r="8" fill="#ff4d4f" stroke="white" stroke-width="2" opacity="0.7" />
+      
+      <!-- Urgency Detection -->
+      <text x="-90" y="45" font-family="Arial" font-size="10" fill="#666" font-weight="bold">Urgency:</text>
+      <rect x="-25" y="40" width="100" height="10" rx="5" ry="5" fill="#f0f0f0" />
+      <rect x="-25" y="40" width="80" height="10" rx="5" ry="5" fill="#ffa940" opacity="0.5" />
+      <text x="80" y="47" font-family="Arial" font-size="8" fill="#b25e00">High</text>
+      
+      <!-- Keywords Detected -->
+      <text x="-90" y="65" font-family="Arial" font-size="10" fill="#666" font-weight="bold">Key Terms:</text>
+      <rect x="-90" y="70" width="50" height="15" rx="7.5" ry="7.5" fill="url(#blueGradient)" opacity="0.2" />
+      <text x="-65" y="80" font-family="Arial" font-size="8" fill="#4361ee" text-anchor="middle">refund</text>
+      
+      <rect x="-30" y="70" width="50" height="15" rx="7.5" ry="7.5" fill="url(#purpleGradient)" opacity="0.2" />
+      <text x="-5" y="80" font-family="Arial" font-size="8" fill="#7209b7" text-anchor="middle">urgent</text>
+      
+      <rect x="30" y="70" width="50" height="15" rx="7.5" ry="7.5" fill="url(#tealGradient)" opacity="0.2" />
+      <text x="55" y="80" font-family="Arial" font-size="8" fill="#4cc9f0" text-anchor="middle">order</text>
+    </g>
+  </g>
+  
+  <!-- Time Metrics Panel -->
+  <g transform="translate(630, 450)" filter="url(#dropShadow)">
+    <rect x="-120" y="-80" width="240" height="160" rx="15" ry="15" fill="white" />
+    
+    <!-- Header -->
+    <rect x="-120" y="-80" width="240" height="30" rx="15" ry="15" fill="url(#tealGradient)" opacity="0.8" />
+    <text x="0" y="-60" font-family="Arial" font-size="12" fill="white" text-anchor="middle" dominant-baseline="middle">Response Metrics</text>
+    
+    <!-- Time Savings -->
+    <g transform="translate(-70, -15)">
+      <circle cx="0" cy="0" r="25" fill="#f8f9fa" />
+      <path d="M0,-20 A20,20 0 0,1 17.32,10 L0,0 Z" fill="url(#blueGradient)" opacity="0.6" />
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <text x="0" y="0" font-family="Arial" font-size="14" fill="#4361ee" text-anchor="middle" dominant-baseline="middle" font-weight="bold">80%</text>
+      <text x="0" y="30" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Time Saved</text>
+    </g>
+    
+    <!-- Satisfaction Score -->
+    <g transform="translate(70, -15)">
+      <circle cx="0" cy="0" r="25" fill="#f8f9fa" />
+      <path d="M0,-20 A20,20 0 1,1 -17.32,10 L0,0 Z" fill="url(#purpleGradient)" opacity="0.6" />
+      <circle cx="0" cy="0" r="15" fill="white" />
+      <text x="0" y="0" font-family="Arial" font-size="14" fill="#7209b7" text-anchor="middle" dominant-baseline="middle" font-weight="bold">92%</text>
+      <text x="0" y="30" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Satisfaction</text>
+    </g>
+    
+    <!-- Response Time -->
+    <g transform="translate(0, 65)">
+      <rect x="-100" y="-20" width="200" height="40" rx="10" ry="10" fill="#f8f9fa" />
+      <text x="-75" y="-5" font-family="Arial" font-size="10" fill="#666" font-weight="bold">Average Response Time:</text>
+      <text x="70" y="-5" font-family="Arial" font-size="10" fill="#4cc9f0" text-anchor="end" font-weight="bold">2.5 min</text>
+      
+      <text x="-75" y="15" font-family="Arial" font-size="10" fill="#666" font-weight="bold">Team Consistency Score:</text>
+      <text x="70" y="15" font-family="Arial" font-size="10" fill="#7209b7" text-anchor="end" font-weight="bold">97%</text>
+    </g>
+  </g>
+  
+  <!-- Connecting Lines (workflow path) -->
+  <g stroke-dasharray="5,5" stroke-width="2" opacity="0.6">
+    <!-- Query to Framework -->
+    <path d="M200,150 C250,200 300,250 355,270" stroke="url(#blueGradient)" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Framework to Response Template -->
+    <path d="M445,270 C500,230 550,200 600,150" stroke="url(#purpleGradient)" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="3s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Framework to Analysis -->
+    <path d="M360,345 C300,380 250,400 200,425" stroke="url(#tealGradient)" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="4s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Framework to Metrics -->
+    <path d="M440,345 C500,380 550,400 600,425" stroke="url(#blueGradient)" fill="none">
+      <animate attributeName="stroke-dashoffset" from="0" to="20" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Floating Elements with Animations -->
+  <g filter="url(#softGlow)">
+    <circle cx="100" cy="200" r="5" fill="#4cc9f0" opacity="0.6">
+      <animate attributeName="cy" values="200;195;200" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="700" cy="350" r="6" fill="#7209b7" opacity="0.5">
+      <animate attributeName="cy" values="350;355;350" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="500" r="4" fill="#4361ee" opacity="0.6">
+      <animate attributeName="cy" values="500;496;500" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="500" cy="100" r="5" fill="#7209b7" opacity="0.5">
+      <animate attributeName="cy" values="100;105;100" dur="4.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  
+  <!-- Satisfaction Score Display -->
+  <g transform="translate(400, 60)">
+    <circle cx="0" cy="0" r="40" fill="white" filter="url(#dropShadow)" />
+    <path d="M 0 -30 A 30 30 0 0 1 30 0 L 0 0 Z" fill="url(#tealGradient)" opacity="0.2" />
+    <path d="M 0 -30 A 30 30 0 0 0 -30 0 L 0 0 Z" fill="url(#tealGradient)" opacity="0.1" />
+    <path d="M 0 0 L 0 -25" stroke="#4cc9f0" stroke-width="3" stroke-linecap="round" transform="rotate(330)">
+      <animateTransform attributeName="transform" type="rotate" from="330" to="30" dur="3s" repeatCount="1" />
+    </path>
+    <circle cx="0" cy="0" r="5" fill="#4cc9f0" />
+    
+    <text x="0" y="55" font-family="Arial" font-size="12" fill="#3a0ca3" text-anchor="middle" font-weight="bold">Customer Satisfaction</text>
+    <text x="0" y="70" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Improved by 35%</text>
+  </g>
+</svg>

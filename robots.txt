@@ -1,0 +1,6 @@
+# robots.txt for Torch AI Prompt Engineering Services
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://inspectorkakui.github.io/sitemap.xml
